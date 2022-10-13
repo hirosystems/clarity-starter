@@ -7,7 +7,9 @@ You can use it as template to create your own project.
 
 Open this project directly VS Code in your web browser by pressing "." or replacing the github.com URL with github.dev.
 
-Like so: [https://github.dev/hirosystems/clarity-project](https://github.dev/hirosystems/clarity-project)
+Like so: [https://github.dev/hirosystems/clarity-project](https://github.dev/hirosystems/clarity-project).
+
+If you don't already have the [Clarity extension](https://marketplace.visualstudio.com/items?itemName=HiroSystems.clarity-lsp) installed, VS Code will suggest you to install it…
 
 ---
 
