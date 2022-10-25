@@ -13,4 +13,4 @@ If you don't already have the [Clarity extension](https://marketplace.visualstud
 
 ---
 
-Read more about the Clarity extension for VS Code [on Hiro's blog](https://www.hiro.so/blog/link/to/article).
+Read more about the Clarity extension for VS Code [on Hiro's blog](https://www.hiro.so/blog/write-clarity-smart-contracts-with-zero-installations-how-we-built-an-in-browser-language-server-using-wasm).
