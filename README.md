@@ -9,7 +9,7 @@ Open this project directly VS Code in your web browser by pressing "." or replac
 
 Like so: [https://github.dev/hirosystems/clarity-project](https://github.dev/hirosystems/clarity-project).
 
-If you don't already have the [Clarity extension](https://marketplace.visualstudio.com/items?itemName=HiroSystems.clarity-lsp) installed, VS Code will suggest you to install it…
+If you don't already have the [Clarity extension](https://marketplace.visualstudio.com/items?itemName=HiroSystems.clarity-lsp) installed, VS Code will suggest you to install it.
 
 ---
 
