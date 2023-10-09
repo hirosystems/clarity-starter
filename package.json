@@ -1,0 +1,22 @@
+{
+  "name": "clarity-starter-tests",
+  "version": "1.0.0",
+  "description": "This repository is a base template to kick-start any Clarity project and build Smart Contracts on Bitcoin. You can use it as template to create your own project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:reports": "vitest run -- --coverage --costs",
+    "test:watch": "chokidar \"unit-tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm t\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hirosystems/clarinet-sdk": "^1.0.1",
+    "@stacks/transactions": "^6.8.1",
+    "chokidar-cli": "^3.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.4",
+    "vitest-environment-clarinet": "^1.0.0"
+  }
+}

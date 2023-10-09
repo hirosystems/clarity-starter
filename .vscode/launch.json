@@ -1,0 +1,22 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "clarinet",
+      "request": "launch",
+      "name": "Call .counter.increment",
+      "manifest": "${workspaceFolder}/Clarinet.toml",
+      "expression": "(contract-call? .counter increment)"
+    },
+    {
+      "type": "clarinet",
+      "request": "launch",
+      "name": "Call .counter.get-counter",
+      "manifest": "${workspaceFolder}/Clarinet.toml",
+      "expression": "(contract-call? .counter get-counter)"
+    }
+  ]
+}
