@@ -8,10 +8,11 @@
       "command": "clarinet check"
     },
     {
-      "label": "test contracts",
+      "type": "npm",
+      "script": "test",
       "group": "test",
-      "type": "shell",
-      "command": "clarinet test"
+      "problemMatcher": [],
+      "label": "npm test"
     }
   ]
 }

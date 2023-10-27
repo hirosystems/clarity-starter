@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 
 const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
-const address2 = accounts.get("wallet_2")!;
 
 describe("test get counter", () => {
   it("ensures <get-count> send the counter value", async () => {
@@ -70,12 +69,14 @@ describe("test <add>", () => {
 
 describe("test get counter at block height", () => {
   it("ensures <get-count> send the counter value", () => {
+    const height1 = Cl.uint(simnet.blockHeight);
     simnet.callPublicFn("counter", "increment", [], address1);
+    const height2 = Cl.uint(simnet.blockHeight);
     simnet.callPublicFn("counter", "increment", [], address1);
 
-    const atBlock1 = simnet.callReadOnlyFn("counter", "get-count-at-block", [Cl.uint(1)], address2);
+    const atBlock1 = simnet.callReadOnlyFn("counter", "get-count-at-block", [height1], address1);
     expect(atBlock1.result).toBeOk(Cl.uint(0));
-    const atBlock2 = simnet.callReadOnlyFn("counter", "get-count-at-block", [Cl.uint(2)], address1);
+    const atBlock2 = simnet.callReadOnlyFn("counter", "get-count-at-block", [height2], address1);
     expect(atBlock2.result).toBeOk(Cl.uint(1));
   });
 
