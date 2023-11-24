@@ -1,6 +1,7 @@
 {
   "name": "clarity-starter-tests",
   "version": "1.0.0",
+  "type": "module",
   "description": "This repository is a base template to kick-start any Clarity project and build Smart Contracts on Bitcoin. You can use it as template to create your own project.",
   "main": "index.js",
   "scripts": {
