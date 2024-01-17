@@ -75,6 +75,11 @@ balance = 100_000_000_000_000
 [devnet]
 disable_stacks_explorer = false
 disable_stacks_api = false
+use_nakamoto = true
+stacks_node_image_url = "blockstack/stacks-blockchain:feat-devnet-tweaks"
+bitcoin_node_image_url = "btcpayserver/bitcoin:25.1"
+epoch_3_0 = 143
+bitcoin_controller_block_time = 3_000
 # disable_bitcoin_explorer = true
 # working_dir = "tmp/devnet"
 # stacks_node_events_observers = ["host.docker.internal:8002"]
@@ -99,8 +104,7 @@ disable_stacks_api = false
 # postgres_password = "postgres"
 # postgres_database = "postgres"
 # bitcoin_node_image_url = "quay.io/hirosystems/bitcoind:devnet-v2"
-# stacks_node_image_url = "localhost:5000/stacks-node:devnet-v2"
-# stacks_api_image_url = "hirosystems/stacks-blockchain-api:latest"
+# docker_platform = "linux/amd64"
 # stacks_explorer_image_url = "hirosystems/explorer:latest"
 # bitcoin_explorer_image_url = "quay.io/hirosystems/bitcoin-explorer:devnet"
 # postgres_image_url = "postgres:14"
@@ -114,25 +118,24 @@ disable_stacks_api = false
 # subnet_events_ingestion_port = 30445
 # subnet_node_events_observers = ["host.docker.internal:8002"]
 
-
 # Send some stacking orders
 [[devnet.pox_stacking_orders]]
-start_at_cycle = 3
+start_at_cycle = 2
 duration = 12
 wallet = "wallet_1"
 slots = 2
 btc_address = "mr1iPkD9N3RJZZxXRk7xF9d36gffa6exNC"
 
-[[devnet.pox_stacking_orders]]
-start_at_cycle = 3
-duration = 12
-wallet = "wallet_2"
-slots = 1
-btc_address = "muYdXKmX9bByAueDe6KFfHd5Ff1gdN9ErG"
+# [[devnet.pox_stacking_orders]]
+# start_at_cycle = 3
+# duration = 12
+# wallet = "wallet_2"
+# slots = 1
+# btc_address = "muYdXKmX9bByAueDe6KFfHd5Ff1gdN9ErG"
 
-[[devnet.pox_stacking_orders]]
-start_at_cycle = 3
-duration = 12
-wallet = "wallet_3"
-slots = 1
-btc_address = "mvZtbibDAAA3WLpY7zXXFqRa3T4XSknBX7"
+# [[devnet.pox_stacking_orders]]
+# start_at_cycle = 3
+# duration = 12
+# wallet = "wallet_3"
+# slots = 1
+# btc_address = "mvZtbibDAAA3WLpY7zXXFqRa3T4XSknBX7"

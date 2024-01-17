@@ -13,7 +13,6 @@ describe("test get counter", () => {
       [],
       address1
     );
-
     expect(result).toHaveClarityType(ClarityType.UInt);
     expect(result).toBeUint(0);
   });
@@ -21,6 +20,7 @@ describe("test get counter", () => {
   // we can actualy get the values in two ways
   it("ensures the counter variable hold the right value", () => {
     const counter = simnet.getDataVar("counter", "count");
+
     expect(counter).toBeUint(0);
   });
 });
