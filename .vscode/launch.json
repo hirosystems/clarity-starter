@@ -16,7 +16,7 @@
       "request": "launch",
       "name": "Call .counter.get-counter",
       "manifest": "${workspaceFolder}/Clarinet.toml",
-      "expression": "(contract-call? .counter get-counter)"
+      "expression": "(contract-call? .counter get-count)"
     }
   ]
 }
