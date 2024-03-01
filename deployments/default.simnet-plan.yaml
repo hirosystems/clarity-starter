@@ -54,9 +54,11 @@ plan:
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/counter.clar
             clarity-version: 2
+      epoch: "2.4"
+    - id: 1
+      transactions:
         - emulated-contract-call:
             contract-id: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.counter
             emulated-sender: ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
             method: increment
             parameters: []
-      epoch: "2.4"
