@@ -52,15 +52,13 @@ plan:
         - emulated-contract-publish:
             contract-name: counter
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-<<<<<<< HEAD
             path: contracts/counter.clar
-=======
-            path: /Users/hugo/Sites/hiro/clarity-starter/contracts/counter.clar
->>>>>>> 0384011 (chore: ugprade clarinet-sdk)
             clarity-version: 2
+      epoch: "2.4"
+    - id: 1
+      transactions:
         - emulated-contract-call:
             contract-id: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.counter
             emulated-sender: ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
             method: increment
             parameters: []
-      epoch: "2.4"
