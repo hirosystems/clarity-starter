@@ -26,9 +26,8 @@ export default defineConfig({
     environment: "clarinet", // use vitest-environment-clarinet
     pool: "forks",
     poolOptions: {
-      threads: {
-        singleThread: true,
-      },
+      threads: { singleThread: true },
+      forks: { singleFork: true },
     },
     setupFiles: [
       vitestSetupFilePath,
