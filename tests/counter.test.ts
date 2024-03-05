@@ -5,6 +5,9 @@ import { describe, expect, it } from "vitest";
 const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
 
+// the count is incremented by 1 in a contract-call in the deployment-plan
+const initialCount = 1;
+
 describe("test get counter", () => {
   it("ensures <get-count> send the counter value", async () => {
     const { result } = simnet.callReadOnlyFn(
@@ -15,13 +18,13 @@ describe("test get counter", () => {
     );
 
     expect(result).toHaveClarityType(ClarityType.UInt);
-    expect(result).toBeUint(0);
+    expect(result).toBeUint(initialCount);
   });
 
   // we can actualy get the values in two ways
   it("ensures the counter variable hold the right value", () => {
     const counter = simnet.getDataVar("counter", "count");
-    expect(counter).toBeUint(0);
+    expect(counter).toBeUint(initialCount);
   });
 });
 
@@ -36,7 +39,7 @@ describe("test <increment>", () => {
     expect(result).toBeOk(Cl.bool(true));
 
     const counter = simnet.getDataVar("counter", "count");
-    expect(counter).toBeUint(1);
+    expect(counter).toBeUint(initialCount + 1);
   });
 
   it("ensures <increment> trasnfers 10 ustx", () => {
@@ -75,6 +78,10 @@ describe("test <decrement>", () => {
   });
 
   it("ensures <decrement> throws an error if result is lower than 0", async () => {
+    for (let i = 0; i < initialCount; i++) {
+      simnet.callPublicFn("counter", "decrement", [], address1);
+    }
+    simnet.callPublicFn("counter", "decrement", [], address1);
     const { result } = simnet.callPublicFn(
       "counter",
       "decrement",
@@ -96,7 +103,7 @@ describe("test <add>", () => {
     expect(result).toBeOk(Cl.bool(true));
 
     const counter = simnet.getDataVar("counter", "count");
-    expect(counter).toBeUint(3);
+    expect(counter).toBeUint(initialCount + 3);
   });
 
   it("ensures <add> trasnfers right amout of ustx", () => {
@@ -141,19 +148,19 @@ describe("test get counter at block height", () => {
       [height1],
       address1
     );
-    expect(atBlock1.result).toBeOk(Cl.uint(0));
+    expect(atBlock1.result).toBeOk(Cl.uint(initialCount));
     const atBlock2 = simnet.callReadOnlyFn(
       "counter",
       "get-count-at-block",
       [height2],
       address1
     );
-    expect(atBlock2.result).toBeOk(Cl.uint(1));
+    expect(atBlock2.result).toBeOk(Cl.uint(initialCount + 1));
   });
 
   // we can actualy get the values in two ways
   it("ensures the counter variable hold the right value", () => {
     const counter = simnet.getDataVar("counter", "count");
-    expect(counter).toBeUint(0);
+    expect(counter).toBeUint(initialCount);
   });
 });
