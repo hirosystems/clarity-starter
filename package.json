@@ -18,6 +18,6 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.2",
     "vitest": "^1.5.2",
-    "vitest-environment-clarinet": "2.1.0"
+    "vitest-environment-clarinet": "^2.1.0"
   }
 }
