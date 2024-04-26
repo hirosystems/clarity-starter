@@ -5,8 +5,19 @@ import { describe, expect, it } from "vitest";
 const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
 
-// the count is incremented by 1 in a contract-call in the deployment-plan
 const initialCount = 1;
+
+describe("the chain reset between tests", () => {
+  it("advances 20 blocks", () => {
+    expect(simnet.blockHeight).toBe(2);
+    simnet.mineEmptyBlocks(20);
+    expect(simnet.blockHeight).toBe(22);
+  });
+
+  it("is back to initial height", () => {
+    expect(simnet.blockHeight).toBe(2);
+  });
+});
 
 describe("test get counter", () => {
   it("ensures <get-count> send the counter value", async () => {
@@ -42,7 +53,7 @@ describe("test <increment>", () => {
     expect(counter).toBeUint(initialCount + 1);
   });
 
-  it("ensures <increment> trasnfers 10 ustx", () => {
+  it("ensures <increment> transfers 10 ustx", () => {
     const { events } = simnet.callPublicFn(
       "counter",
       "increment",
@@ -106,7 +117,7 @@ describe("test <add>", () => {
     expect(counter).toBeUint(initialCount + 3);
   });
 
-  it("ensures <add> trasnfers right amout of ustx", () => {
+  it("ensures <add> transfers right amout of ustx", () => {
     const { events } = simnet.callPublicFn(
       "counter",
       "add",
