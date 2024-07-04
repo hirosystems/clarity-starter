@@ -59,9 +59,6 @@ plan:
             emulated-sender: ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
             method: increment
             parameters: []
-      epoch: "2.5"
-    - id: 1
-      transactions:
         - stx-transfer:
             expected-sender: ST3PF13W7Z0RRM42A8VZRVFQ75SV1K26RXEP8YGKJ
             recipient: ST3NBRSFKX28FQ2ZJ1MAKX58HKHSDGNV5N7R21XCP

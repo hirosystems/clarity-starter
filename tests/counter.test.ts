@@ -6,16 +6,17 @@ const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
 
 const initialCount = 1;
+const initialHeight = 1;
 
 describe("the chain reset between tests", () => {
   it("advances 20 blocks", () => {
-    expect(simnet.blockHeight).toBe(2);
+    expect(simnet.blockHeight).toBe(initialHeight);
     simnet.mineEmptyBlocks(20);
-    expect(simnet.blockHeight).toBe(22);
+    expect(simnet.blockHeight).toBe(initialHeight + 20);
   });
 
   it("is back to initial height", () => {
-    expect(simnet.blockHeight).toBe(2);
+    expect(simnet.blockHeight).toBe(initialHeight);
   });
 });
 
