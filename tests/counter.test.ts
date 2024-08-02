@@ -26,7 +26,7 @@ describe("test get counter", () => {
       "counter",
       "get-count",
       [],
-      address1
+      address1,
     );
 
     expect(result).toHaveClarityType(ClarityType.UInt);
@@ -46,7 +46,7 @@ describe("test <increment>", () => {
       "counter",
       "increment",
       [],
-      address1
+      address1,
     );
     expect(result).toBeOk(Cl.bool(true));
 
@@ -59,7 +59,7 @@ describe("test <increment>", () => {
       "counter",
       "increment",
       [],
-      address1
+      address1,
     );
     expect(events.length).toBe(1);
     const transferEvent = events[0];
@@ -98,7 +98,7 @@ describe("test <decrement>", () => {
       "counter",
       "decrement",
       [],
-      address1
+      address1,
     );
     expect(result).toBeErr(Cl.uint(1001));
   });
@@ -110,7 +110,7 @@ describe("test <add>", () => {
       "counter",
       "add",
       [Cl.uint(3)],
-      address1
+      address1,
     );
     expect(result).toBeOk(Cl.bool(true));
 
@@ -123,7 +123,7 @@ describe("test <add>", () => {
       "counter",
       "add",
       [Cl.uint(3)],
-      address1
+      address1,
     );
 
     expect(events.length).toBe(1);
@@ -141,7 +141,7 @@ describe("test <add>", () => {
       "counter",
       "add",
       [Cl.uint(1)],
-      address1
+      address1,
     );
     expect(result).toBeErr(Cl.uint(1002));
   });
@@ -158,14 +158,14 @@ describe("test get counter at block height", () => {
       "counter",
       "get-count-at-block",
       [height1],
-      address1
+      address1,
     );
     expect(atBlock1.result).toBeOk(Cl.uint(initialCount));
     const atBlock2 = simnet.callReadOnlyFn(
       "counter",
       "get-count-at-block",
       [height2],
-      address1
+      address1,
     );
     expect(atBlock2.result).toBeOk(Cl.uint(initialCount + 1));
   });
