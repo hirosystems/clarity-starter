@@ -12,6 +12,7 @@ describe("the chain reset between tests", () => {
   it("advances 20 blocks", () => {
     expect(simnet.blockHeight).toBe(initialHeight);
     simnet.mineEmptyBlocks(20);
+
     expect(simnet.blockHeight).toBe(initialHeight + 20);
   });
 
