@@ -11,13 +11,6 @@
   (var-get count)
 )
 
-(define-read-only (get-count-at-block (block uint))
-  (ok (at-block
-    (unwrap! (get-block-info? id-header-hash block) ERR_BLOCK_NOT_FOUND)
-    (var-get count)
-  ))
-)
-
 (define-public (increment)
   (begin
     (try! (stx-transfer? (var-get cost) tx-sender (var-get contract-owner)))
