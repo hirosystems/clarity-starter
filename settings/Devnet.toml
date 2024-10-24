@@ -76,10 +76,6 @@ balance = 100_000_000_000_000
 disable_stacks_explorer = false
 disable_stacks_api = false
 bitcoin_controller_block_time = 6000
-# stacks_node_image_url = "localhost:5001/stacks-node:local"
-# stacks_signer_image_url = "localhost:5001/stacks-signer:local"
-# stacks_node_image_url = "quay.io/hirosystems/stacks-node:devnet-2.5"
-# stacks_signer_image_url = "quay.io/hirosystems/stacks-signer:devnet-2.5"
 
 # disable_bitcoin_explorer = true
 # working_dir = "tmp/devnet"
@@ -113,7 +109,7 @@ bitcoin_controller_block_time = 6000
 # epoch_2_2 = 104
 # epoch_2_3 = 105
 # epoch_2_4 = 106
-# epoch_3_0 = 124
+# epoch_3_0 = 144
 
 # Send some stacking orders
 [[devnet.pox_stacking_orders]]
