@@ -6,7 +6,7 @@ const accounts = simnet.getAccounts();
 const address1 = accounts.get("wallet_1")!;
 
 const initialCount = 1;
-const initialHeight = 1;
+const initialHeight = 2;
 
 describe("the chain reset between tests", () => {
   it("advances 20 blocks", () => {
