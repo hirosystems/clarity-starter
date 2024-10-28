@@ -8,8 +8,8 @@ requirements = []
 
 [contracts.counter]
 path = 'contracts/counter.clar'
-clarity_version = 2
-epoch = 2.5
+clarity_version = 3
+epoch = 3.0
 
 [repl.analysis]
 passes = ['check_checker']

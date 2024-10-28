@@ -13,7 +13,7 @@
 
 (define-read-only (get-count-at-block (block uint))
   (ok (at-block
-    (unwrap! (get-block-info? id-header-hash block) ERR_BLOCK_NOT_FOUND)
+    (unwrap! (get-stacks-block-info? id-header-hash block) ERR_BLOCK_NOT_FOUND)
     (var-get count)
   ))
 )
