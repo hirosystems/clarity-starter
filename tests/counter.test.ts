@@ -33,6 +33,17 @@ describe("test get counter", () => {
     expect(result).toBeUint(initialCount);
   });
 
+  it("ensures <get-count> write cosst is 0 and read is 4", async () => {
+    const { costs } = simnet.callReadOnlyFn(
+      "counter",
+      "get-count",
+      [],
+      address1,
+    );
+    expect(costs?.total.readCount).toBe(4);
+    expect(costs?.total.writeCount).toBe(0);
+  });
+
   it("ensures the counter variable hold the right value", () => {
     const counter = simnet.getDataVar("counter", "count");
     expect(counter).toBeUint(initialCount);
