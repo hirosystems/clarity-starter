@@ -4,18 +4,8 @@ description = ''
 authors = []
 telemetry = false
 cache_dir = './.cache'
-requirements = []
 
 [contracts.counter]
 path = 'contracts/counter.clar'
 clarity_version = 3
 epoch = 3.0
-
-[repl.analysis]
-passes = ['check_checker']
-
-[repl.analysis.check_checker]
-strict = true
-trusted_sender = false
-trusted_caller = false
-callee_filter = false
