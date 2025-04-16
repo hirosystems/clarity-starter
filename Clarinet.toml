@@ -9,3 +9,8 @@ cache_dir = './.cache'
 path = 'contracts/counter.clar'
 clarity_version = 3
 epoch = 3.1
+
+[repl.remote_data]
+enabled = false
+api_url = "https://api.hiro.so"
+initial_height = 595050

@@ -6,7 +6,6 @@
 (define-data-var contract-owner principal tx-sender)
 (define-data-var cost uint u10)
 
-
 (define-read-only (get-count)
   (var-get count)
 )
