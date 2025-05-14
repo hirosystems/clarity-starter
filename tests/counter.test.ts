@@ -96,7 +96,7 @@ describe("test <decrement>", () => {
     expect(block[1].result).toBeOk(Cl.bool(true));
 
     const counter = simnet.getDataVar("counter", "count");
-    expect(counter).toBeUint(originalValue);
+    expect(counter).toBeUint(originalValue as number);
   });
 
   it("ensures <decrement> throws an error if result is lower than 0", async () => {
