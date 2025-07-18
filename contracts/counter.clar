@@ -27,7 +27,7 @@
 (define-public (decrement)
   (let ((current-count (var-get count)))
     (asserts! (> current-count u0) ERR_COUNT_MUST_BE_POSITIVE)
-    (ok (var-set count (- current-count u1)))
+    (ok (var-set count (- current-count 1)))
   )
 )
 
