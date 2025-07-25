@@ -42,8 +42,6 @@ balance = 100_000_000_000_000
 disable_stacks_explorer = false
 disable_stacks_api = false
 
-stacks_explorer_image_url = "hirosystems/explorer:feat-devnet-improvements"
-
 # disable_bitcoin_explorer = true
 # working_dir = "tmp/devnet"
 # faucet_derivation_path = "m/44'/5757'/0'/0/0"

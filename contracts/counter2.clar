@@ -1,0 +1,6 @@
+(define-read-only (get-count)
+  (contract-call? .counter get-count)
+)
+(define-public (increment)
+  (contract-call? .counter increment)
+)

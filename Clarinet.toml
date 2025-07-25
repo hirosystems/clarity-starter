@@ -5,12 +5,14 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 
+
 [contracts.counter]
 path = 'contracts/counter.clar'
 clarity_version = 3
-epoch = 3.1
+epoch = '3.0'
 
-[repl.remote_data]
-enabled = false
-api_url = "https://api.hiro.so"
-initial_height = 595050
+[contracts.counter2]
+path = 'contracts/counter2.clar'
+clarity_version = 3
+epoch = '3.0'
+
