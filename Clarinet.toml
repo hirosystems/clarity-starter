@@ -5,14 +5,8 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 
-
 [contracts.counter]
 path = 'contracts/counter.clar'
 clarity_version = 3
-epoch = '3.0'
-
-[contracts.counter2]
-path = 'contracts/counter2.clar'
-clarity_version = 3
-epoch = '3.0'
+epoch = 'latest'
 
