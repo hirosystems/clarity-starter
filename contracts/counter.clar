@@ -20,7 +20,8 @@
 (define-public (increment)
   (begin
     (try! (stx-transfer? (var-get cost) tx-sender (var-get contract-owner)))
-    (ok (var-set count (+ (var-get count) u1)))
+    (ok 
+      (var-set count (+ (var-get count) u1)))
   )
 )
 

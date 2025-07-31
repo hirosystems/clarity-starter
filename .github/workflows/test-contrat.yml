@@ -18,8 +18,7 @@ jobs:
       - name: Check Clarity contracts check
         run: clarinet check --use-on-disk-deployment-plan
       - name: Check Clarity contracts format
-        # should be --check instead of --in-place and throw an error if the contracts are not formatted correctly
-        run: clarinet fmt --dry-run
+        run: clarinet fmt -check
 
   test:
     runs-on: ubuntu-latest
