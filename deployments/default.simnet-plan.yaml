@@ -55,4 +55,4 @@ plan:
             mstx-amount: 2222222
             cost: 1000
             anchor-block-only: true
-      epoch: "3.1"
+      epoch: "3.2"

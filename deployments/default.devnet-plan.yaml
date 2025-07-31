@@ -15,4 +15,4 @@ plan:
             path: contracts/counter.clar
             anchor-block-only: true
             clarity-version: 3
-      epoch: "3.1"
+      epoch: "3.2"

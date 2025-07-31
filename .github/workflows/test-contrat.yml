@@ -10,15 +10,23 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
-
+  sanity-checks:
     runs-on: ubuntu-latest
+    container: hirosystems/clarinet:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Clarity contracts check
+        run: clarinet check --use-on-disk-deployment-plan
+      - name: Check Clarity contracts format
+        run: clarinet fmt --check
 
+  test:
+    runs-on: ubuntu-latest
+    needs: sanity-checks
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x, 24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -28,9 +36,8 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run test:reports
-
       - name: Upload coverage data to codecov
-        if: ${{ matrix.node-version == '20.x' }}
+        if: ${{ matrix.node-version == '24.x' }}
         uses: codecov/codecov-action@v4
         with:
           files: lcov.info
