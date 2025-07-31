@@ -38,8 +38,3 @@
     (ok (var-set count (+ (var-get count) n)))
   )
 )
-
-(define-constant N 1)
-(define-read-only (get-N)
-  N
-)
